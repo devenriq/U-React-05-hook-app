@@ -8,7 +8,10 @@ export const CounterApp = () => {
   });
 
   const handleAdd = () => {
-    setCounter(counter1 + 1);
+    setCounter((prevState) => ({
+      ...prevState,
+      counter1: prevState.counter1 + 1,
+    }));
   };
 
   return (
