@@ -1,6 +1,9 @@
 import { useCounter } from "../hooks/useCounter.js";
 import { useFetch } from "../hooks/useFetch.js";
 
+import { Quote } from "./Quote.jsx";
+import { QuoteLoading } from "./QuoteLoading.jsx";
+
 export const MultipleCustomHooks = () => {
   const { counter, increment, decrement, reset } = useCounter(1);
 
@@ -10,21 +13,12 @@ export const MultipleCustomHooks = () => {
 
   const { author, quote } = !!data && data[0];
 
-  console.log(data, isLoading, hasError);
-
   return (
     <>
       <h1>Breaking Bad Quotes</h1>
       <hr />
 
-      {isLoading ? (
-        <div className="alert alert-info text-center">Loading...</div>
-      ) : (
-        <blockquote className="blockquote text-end">
-          <p>{quote}</p>
-          <footer className="blockquote-footer">{author}</footer>
-        </blockquote>
-      )}
+      {isLoading ? <QuoteLoading /> : <Quote quote={quote} author={author} />}
 
       <button
         className="btn btn-primary"
