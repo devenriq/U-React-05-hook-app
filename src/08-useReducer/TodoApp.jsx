@@ -27,7 +27,16 @@ export const TodoApp = () => {
 
       <div className="row">
         <div className="col-7">
-          <TodoList />
+          {/* <TodoList /> */}
+          <ul className="list-group">
+            <li
+              key="id"
+              className="list-group-item d-flex justify-content-between"
+            >
+              <span className="align-self-center">Item 1</span>
+              <button className="btn btn-danger">Borrar</button>
+            </li>
+          </ul>
         </div>
         <div class="col-5">
           <h4>Agregar TODO</h4>
