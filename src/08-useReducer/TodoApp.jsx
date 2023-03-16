@@ -1,4 +1,5 @@
 import { useReducer } from "react";
+import { TodoAdd } from "./TodoAdd";
 import { TodoList } from "./TodoList";
 import { todoReducer } from "./todoReducer";
 
@@ -34,6 +35,7 @@ export const TodoApp = () => {
         <div className="col-5">
           <h4>Agregar TODO</h4>
           <hr />
+          <TodoAdd onNewTodo={handleNewTodo} />
         </div>
       </div>
     </>

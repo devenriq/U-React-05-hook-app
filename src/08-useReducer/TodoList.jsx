@@ -1,3 +1,5 @@
+import { TodoItem } from "./TodoItem";
+
 export const TodoList = ({ todos = [] }) => {
   console.log(todos);
 
@@ -5,15 +7,7 @@ export const TodoList = ({ todos = [] }) => {
     <>
       <ul className="list-group">
         {todos.map((todo) => {
-          return (
-            <li
-              key={todo.id}
-              className="list-group-item d-flex justify-content-between"
-            >
-              <span className="align-self-center">Item 1</span>
-              <button className="btn btn-danger">Borrar</button>
-            </li>
-          );
+          return <TodoItem key={todo.id} todo={todo} />;
         })}
       </ul>
     </>
